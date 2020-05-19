@@ -1,0 +1,7 @@
+{
+  "name": "ProyectoFoldingatHome",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
