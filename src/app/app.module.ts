@@ -9,6 +9,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomePageModule } from './home/home.module';
+import { ColaborarPageModule } from './colaborar/colaborar.module';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -16,7 +17,8 @@ import { HomePageModule } from './home/home.module';
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    HomePageModule
+    HomePageModule,
+    ColaborarPageModule,
   ],
   providers: [
     StatusBar,
