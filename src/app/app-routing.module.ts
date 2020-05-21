@@ -2,14 +2,18 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
+
   {
-    path: '',
-    redirectTo: 'folder/Inbox',
-    pathMatch: 'full'
+    path: 'home',
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
   {
-    path: 'folder/:id',
-    loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
+    path: 'estadisticas',
+    loadChildren: () => import('./estadisticas/estadisticas.module').then( m => m.EstadisticasPageModule)
+  },
+  {
+    path: 'colaborar',
+    loadChildren: () => import('./colaborar/colaborar.module').then( m => m.ColaborarPageModule)
   }
 ];
 
