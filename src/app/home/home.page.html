@@ -1,69 +1,40 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>home</ion-title>
-    
+    <ion-title>Inicio</ion-title>
+
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
-  <!-- HEADER-->
-  <section class="default-banner active-blog-slider">
-    <div class="item-slider relative" style="background: url(assets/img/1.jpg);background-size: cover;">
-      <div class="overlay" style="background: rgba(0,0,0,.3)"></div>
-      <div class="container">
-        <div class="row fullscreen justify-content-center align-items-center">
-          <div class="col-md-10 col-12">
-            <div class="banner-content text-center">
-              <h4 class="text-white mb-20 text-uppercase"></h4>
-              <h1 class="text-uppercase text-white">FOLDING AT HOME - QUÉ ES?</h1>
-              <p class="text-white">Resumen sobre el proyecto, con su principal finalidad y características.</p>
-              <a href="#" class="text-uppercase header-btn">Saber más</a>
-            </div>
-          </div>
+<!-- HEADER -->
 
+  <ion-slides pager="true" [options]="slideOptionsOne">
+    <ion-slide *ngFor="let slide of slides">
+      <div class="container-home">
+        <div class="overload-text">
+          <h1 [innerHtml]="slide.titulo"></h1>
+          <h3 [innerHtml]="slide.desc"></h3>
+        </div>
+        <div>
+          <ion-grid fixed>
+            <ion-row>
+              <ion-col size="6" offset="3">
+                <ion-button color="light" expand="full" shape="round" mode="ios" class="btn-prueba">
+                  {{slide.boton}}
+                </ion-button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
         </div>
       </div>
-    </div>
-    <div class="item-slider relative" style="background: url(assets/img/1.jpg);background-size: cover;">
-      <div class="overlay" style="background: rgba(0,0,0,.3)"></div>
-      <div class="container">
-        <div class="row fullscreen justify-content-center align-items-center">
-          <div class="col-md-10 col-12">
-            <div class="banner-content text-center">
-              <h4 class="text-white mb-20 text-uppercase"></h4>
-              <h1 class="text-uppercase text-white">Comienza a colaborar</h1>
-              <p class="text-white">Información relevante que aliente a que los lectores quieran colaborar en el proyecto.</p>
-              <a href="#" class="text-uppercase header-btn">Quiero colaborar</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="item-slider relative" style="background: url(assets/img/1.jpg);background-size: cover;">
-      <div class="overlay" style="background: rgba(0,0,0,.3)"></div>
-      <div class="container">
-        <div class="row fullscreen justify-content-center align-items-center">
-          <div class="col-md-10 col-12">
-            <div class="banner-content text-center">
-              <h4 class="text-white mb-20 text-uppercase"></h4>
-              <h1 class="text-uppercase text-white">COVID-19</h1>
-              <p class="text-white">Información resumida sobre el covid-19 para aquellos que estén interesados en saber más acerca de ello.</p>
-              <a href="#" class="text-uppercase header-btn">Saber más</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </ion-slide>
+  </ion-slides>
 
   <!-- FIN HEADER-->
 
 
   <!-- PÁGINA DE INICIO -->
-  <br><br>
-  <section>
-    
     <div>
       <ion-card>
         <ion-card-header>
@@ -87,7 +58,7 @@
           <hr>
           <ion-item>
             <img class="imgHome" src="assets/img/initImage.jpg" alt="">
-            
+
           </ion-item>
           <ion-item>
             <p class="p-distance">Folding at home te permite sumarte a la comunidad de investigadores que trabajan para
@@ -105,7 +76,6 @@
         </ion-card-content>
       </ion-card>
     </div>
-  </section>
 
   <!-- FIN PÁGINA DE INICIO -->
 
@@ -164,6 +134,6 @@
     </footer>
   </ion-footer>
 
-  
+
 
 </ion-content>

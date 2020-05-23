@@ -1,3 +1,5 @@
+/* ESTILOS FOOTER RESPONSIVE */
+
 .site-footer
 {
   background-color:#26272b;
@@ -139,6 +141,7 @@
 .social-icons a.facebook:hover
 {
   background-color:#3b5998
+  
 }
 .social-icons a.twitter:hover
 {
@@ -162,6 +165,8 @@
   }
 }
 
+/* FIN ESTILOS FOOTER RESPONSIVE */
+
 .highlight{
     color: orange;
 }
@@ -174,6 +179,7 @@
 .img-logo{
   width: 30%;
   padding: 10px;
+  height: auto;
 }
 
 .imgHome{
@@ -191,3 +197,51 @@ hr.line{
   width: 70%;
   margin-right: auto;
 }
+
+/* ESTILOS SLIDER */
+
+ion-slide{
+  display: block;
+  
+}
+
+.imgPadding{
+  padding: 40px;
+}
+
+h1{
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: white;
+  font-weight: bold;
+  font-size: 40px;
+  
+}
+
+h3{
+  font-size: 20px;
+  padding: 10px;
+  color: white;
+}
+
+.btn-prueba{
+  height: 40px;
+  margin-bottom: 20px;
+}
+
+ion-slides{
+  --bullet-background: grey;
+  --bullet-background-active: orange;
+}
+
+
+
+
+.container-home{
+  background: url(./../../assets/img/slide.jpg) no-repeat;
+  background-size: cover;
+  padding: 10px;
+}
+
+
+/* FIN ESTILOS SLIDER*/
