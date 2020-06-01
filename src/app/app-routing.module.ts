@@ -14,9 +14,14 @@ const routes: Routes = [
   {
     path: 'colaborar',
     loadChildren: () => import('./colaborar/colaborar.module').then( m => m.ColaborarPageModule)
-  },  {
+  },
+  {
     path: 'manual',
     loadChildren: () => import('./manual/manual.module').then( m => m.ManualPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   }
 
 ];

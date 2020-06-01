@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
+import { LoginPage } from '../login/login.page';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePage implements OnInit {
 
-  constructor() { }
+  constructor(public modalController: ModalController) { }
 
   ngOnInit() {
   }
@@ -38,6 +40,19 @@ export class HomePage implements OnInit {
     slidesPerView: 1,
     autoplay: false,
     speed: 400
+  }
+
+  
+  // Modal de registro
+
+  async registerTapped(){
+
+    let modal;
+    modal = await this.modalController.create({
+      component: LoginPage,
+    });
+
+    return await modal.present();
   }
 
 }

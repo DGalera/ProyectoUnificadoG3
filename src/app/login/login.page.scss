@@ -1,0 +1,46 @@
+$white-color: rgb(255, 255, 255);
+$height100: 100%;
+
+ion-grid {
+    width:100%;
+    height: $height100;
+    background: #dfdfdf;
+}
+
+ion-row {
+    height: $height100;
+}
+
+ion-col {
+    border: 1px solid #488aff;
+    background: $white-color;
+}
+
+ion-button {
+    font-weight: 300;
+}
+
+@media (min-width: 240px) and (max-width: 768px) {
+    ion-grid {
+        background: $white-color;
+    }
+    ion-col {
+        border: none;
+    }
+}
+
+/* ESTILOS FORMULARIO */
+
+.inputBox{
+    padding: 1px;
+}
+
+.registerPointer{
+    cursor: pointer;
+}
+
+.input-margin{
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: auto;
+}

@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismissModal()">Cerrar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Introduce tus datos para acceder o regístrate</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-grid>
+        <ion-row class="justify-content-center">
+          <ion-col class="align-self-center" size-md="12" size-lg="10" size-xs="12" size-xl="12">
+            <div class="text-center">
+              
+            </div>
+            <div *ngIf="registerIsTapped==true">
+              <ion-item class="inputBox input-margin">
+                <ion-icon name="person-outline" slot="start"></ion-icon>
+                <ion-input  type="text" placeholder="Nombre de usuario" [(ngModel)]="userName"></ion-input>
+              </ion-item>
+    
+              <ion-item class="inputBox input-margin">
+                <ion-icon name="mail-outline" slot="start"></ion-icon>
+                <ion-input type="text" placeholder="Correo Electrónico" [(ngModel)]="userEmail"></ion-input>
+              </ion-item>
+    
+              <ion-item class="inputBox input-margin">
+                <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+                <ion-input type="password" placeholder="Contraseña" [(ngModel)]="userPass"></ion-input>
+              </ion-item>
+            </div>
+
+            <div *ngIf="loginIsTapped==true">
+              <ion-item class="inputBox input-margin">
+                <ion-icon name="mail-outline" slot="start"></ion-icon>
+                <ion-input type="text" placeholder="Correo electrónico" [(ngModel)]="userEmailLogin"></ion-input>
+              </ion-item>
+    
+              <ion-item class="inputBox input-margin">
+                <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+                <ion-input type="password" placeholder="Contraseña" [(ngModel)]="userPassLogin"></ion-input>
+              </ion-item>
+            </div>
+
+            <div class="alert alert-danger" role="alert" *ngIf="success==false" >
+              {{loginError}}
+            </div>
+
+            <div class="padding" *ngIf="loginIsTapped==true">
+              <ion-button size="large"  expand="block" (click)="onLogin()">Acceder</ion-button>
+            </div>
+
+            <ion-item *ngIf="registerIsTapped==false">
+              <ion-label class="ion-text-center">Eres nuevo? <span color="primary" class="registerPointer" (click)="signUp()">Regístrate</span></ion-label>
+            </ion-item>
+    
+            <div class="padding" *ngIf="registerIsTapped==true">
+              <ion-button size="large"  expand="block" (click)="onRegister()">Registrarse</ion-button>
+            </div>
+
+            <ion-item *ngIf="registerIsTapped==true">
+              <ion-label class="ion-text-center">Ya tienes una cuenta? <br> <span color="primary" class="registerPointer">Ingresa con tus datos</span></ion-label>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+  
+
+
+</ion-content>
