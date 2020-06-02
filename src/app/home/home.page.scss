@@ -180,10 +180,12 @@
   width: 30%;
   padding: 10px;
   height: auto;
+  float: left;
 }
 
 .imgHome{
   width: 30%;
+  height: auto;
   float: right;
 }
 
@@ -240,6 +242,7 @@ ion-slides{
 .container-home{
   background: url(./../../assets/img/slide.jpg) no-repeat;
   background-size: cover;
+  height: 400px;
   padding: 10px;
 }
 

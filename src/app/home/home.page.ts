@@ -38,7 +38,7 @@ export class HomePage implements OnInit {
   slideOptionsOne = {
     initialSlide: 0,
     slidesPerView: 1,
-    autoplay: false,
+    autoplay: true,
     speed: 400
   }
 
