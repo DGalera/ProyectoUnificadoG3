@@ -1,19 +1,55 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>colaborar</ion-title>
+    <ion-title>Colaborar</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <p>
-    En primer lugar es necesario descargar el software creado por Folding At Home para quipos
-  particulares.
-  Una vez instalado el programa abre directamente una ventana del navegador web del usuario,
-  y éste puede elegir en qué condiciones quiere colaborar con el proyecto, ya sea de manera
-  anónima o dando su identidad, con mayor o menor intensidad, o en momentos en los que el
-  equipo está inactivo o mientras está trabajando en paralelo con otras tareas.
-  Por otro lado, cada usuario puede elegir si prefiere contribuir a una línea de investigación
-  específica ya que pueden colaborar para distintas enfermedades e ir consultando los puntos
-  acumulados por su ordenador o por el equipo del que forma parte.
-  </p>
+  <ion-list>
+    <ion-list-header>Cómo Colaborar</ion-list-header>
+
+    <ion-item>
+      <ion-thumbnail slot="start">
+        <img src="../../assets/img/download.png">
+      </ion-thumbnail>
+      <ion-label>
+        Descarga
+        <p>Desde la página oficial de <a href="https://foldingathome.org">folding at home</a></p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-thumbnail slot="start">
+        <img src="../../assets/img/compdistr.jpg">
+      </ion-thumbnail>
+      <ion-label>
+        Comparte
+        <p>Dona una pequeña parte de tu ordenador</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-thumbnail slot="start">
+        <img src="../../assets/img/medicina.jpg">
+      </ion-thumbnail>
+      <ion-label>
+        Ayuda
+        <p>Colaborando en la investigación de enfermedades</p>
+      </ion-label>
+    </ion-item>
+
+  </ion-list>
+  
+  <ion-card>
+    <ion-card-header>
+      <img style="width: 50%; height: 50%; float:left; margin-right: 30px; border-radius: 50%;" src="../../assets/img/manos.jpg" />
+      <ion-card-title>Instalar Folding at Home es fácil</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-button color="primary" [routerLink]="['/manual']">
+        Click aqui para saber cómo
+      </ion-button>    
+    </ion-card-content>    
+    </ion-card>
+
 </ion-content>
