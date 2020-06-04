@@ -1,7 +1,8 @@
 {
   "name": "ProyectoFoldingatHome",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "cordova": {}
   },
   "type": "angular"
 }
