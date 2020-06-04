@@ -21,9 +21,9 @@ export class EstadisticasPage {
         labels: ['ENERO', 'FEBRERO', 'MARZO', 'ABRIL', 'MAYO', 'JUNIO', 'JULIO', 'AGOSTO','SEPTIEMBRE','OCTUBRE','NOVIEMBRE','DICIEMBRE'],
         datasets: [{
           label: 'Contributions',
-          data: [2, 3, 5, 6, 6, 7],
-          backgroundColor: 'rgb(255,165,0)', // array should have same number of elements as number of dataset
-          borderColor: 'rgb(255,165,0)',// array should have same number of elements as number of dataset
+          data: [2, 3, 4, 3, 3, 5,2,4,1,5,4,1],
+          backgroundColor: 'rgb(255,165,1)', // array should have same number of elements as number of dataset
+          borderColor: 'rgb(255,165,1)',// array should have same number of elements as number of dataset
           borderWidth: 1
         }]
       },
