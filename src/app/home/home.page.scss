@@ -171,7 +171,13 @@
     color: orange;
 }
 
-
+img {
+  padding: 20px;
+  height: 300px;
+  width: 500px;
+  display: block;
+  margin: auto;
+}
 
 
 
@@ -219,7 +225,7 @@ h1{
   font-weight: bold;
   margin-bottom: 30px;
   color: white;
-  font-weight: bold;
+  font-weight: 100;
   font-size: 40px;
   
 }
@@ -238,6 +244,13 @@ h3{
 ion-slides{
   --bullet-background: grey;
   --bullet-background-active: orange;
+}
+
+ion-text{
+  line-height: 30px ;
+  font-size: 19px ;
+  font-weight: 100;
+  color:white;
 }
 
 
