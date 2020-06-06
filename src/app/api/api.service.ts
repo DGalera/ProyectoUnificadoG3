@@ -39,7 +39,7 @@ export class ApiService {
       console.log('JS Call error')
     })
   }*/
-  get_Donors(){
+   get_Donors(){
     return this.http.get(this.proxyURL + this.apiURL + '/donors').pipe(
       tap(data=> console.log(JSON.stringify(data))),
       catchError(this.handleError)
