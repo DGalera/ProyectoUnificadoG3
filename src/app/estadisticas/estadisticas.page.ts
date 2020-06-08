@@ -4,6 +4,7 @@ import { ApiService } from '../api/api.service';
 import { Router } from '@angular/router';
 import { Chart } from 'chart.js';
 import { callbackify } from 'util';
+import { LoadingController, NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-estadisticas',
@@ -16,6 +17,9 @@ export class EstadisticasPage implements OnInit {
   bars: any;
   colorArray: any;
 
+  loading : any;
+  comments: string = '';
+
   function1 = false;
   function2 = false;
 
@@ -26,22 +30,48 @@ export class EstadisticasPage implements OnInit {
   private topDonorsName: string[] = [];
   private topDonorsCredit: number[] = [];
   dataLoaded = false;
-  constructor(private apiService: ApiService, private route: Router) { }
+  constructor(private apiService: ApiService, private route: Router, private nav: NavController, private loadingCtrl: LoadingController) { }
 
   ngOnInit() {
-    this.retrieveValues();
+    
   }
 
+  async showLoading() {
+    this.loading= await this.loadingCtrl.create({
+      spinner: "crescent",
+      message: "Cargando...",
+      cssClass: "loader-class"
 
-  retrieveValues(){
-     this.apiService.get_Donors().subscribe(
+      
+    });
+    // Show the loading page
+    this.loading.present()
+    // Get the Async information 
+    this.getAsyncData();
+  }
+
+  private getAsyncData() {
+
+    this.apiService.get_Donors().subscribe(
       (data: any) => {
         this.donors = data.results,    
-        this.dataLoaded=true;
+        this.dataLoaded=true,
+        this.hideLoading(),
+        this.createBarChart();
       }
     );
+
     return this.donors;
+
+    
   }
+
+
+  private hideLoading(){
+    // Hide the loading component
+    this.loading.dismiss();
+  }
+
 
   getTopDonorsName(){
     this.topDonors = this.donors.slice(0,10);
@@ -62,13 +92,10 @@ export class EstadisticasPage implements OnInit {
   }
 
 
-  ionViewDidEnter() {
-    setTimeout(()=>{
-      this.createBarChart();
-    }, 1000);
-    
+  
+  ionViewWillEnter(){
+    this.showLoading()
   }
-
 
   
   createBarChart() {
