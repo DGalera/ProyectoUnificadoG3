@@ -29,7 +29,6 @@ export class EstadisticasPage implements OnInit {
   private topDonors:  Array<IDonor> = [];
   private topDonorsName: string[] = [];
   private topDonorsCredit: number[] = [];
-  dataLoaded = false;
   constructor(private apiService: ApiService, private route: Router, private nav: NavController, private loadingCtrl: LoadingController) { }
 
   ngOnInit() {
@@ -54,10 +53,9 @@ export class EstadisticasPage implements OnInit {
 
     this.apiService.get_Donors().subscribe(
       (data: any) => {
-        this.donors = data.results,    
-        this.dataLoaded=true,
-        this.hideLoading(),
-        this.createBarChart();
+        this.donors = data.results,         
+        this.createBarChart(),
+        this.hideLoading();
       }
     );
 
