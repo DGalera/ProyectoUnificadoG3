@@ -123,6 +123,7 @@ export class LoginPage implements OnInit {
             console.log(error);
           });
       }).catch(error => console.log(error.message));
+      this.authService.isLogged = true;
     this.getCurrentUser();
   }
 }
