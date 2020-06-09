@@ -79,10 +79,6 @@ export class LoginPage implements OnInit {
         });
       }
     });
-
-
-
-
   }
 
   // Muestra el form de registro
@@ -98,10 +94,10 @@ export class LoginPage implements OnInit {
       .then((res) => {
         console.log("Logeado correctamente");
         this.authService.isLogged = true;
+        this.getCurrentUser();
       }).catch(error => {
       this.loginError = error.message, console.log("Error: ", error); if (this.loginError == '') {
-        this.success = true;
-        this.getCurrentUser();
+        this.success = true;  
       } else {
         this.success = false;
       }

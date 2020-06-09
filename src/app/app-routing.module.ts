@@ -22,7 +22,15 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },  {
+    path: 'tablon-respuestas',
+    loadChildren: () => import('./tablon-respuestas/tablon-respuestas.module').then( m => m.TablonRespuestasPageModule)
+  },
+  {
+    path: 'comentarios',
+    loadChildren: () => import('./comentarios/comentarios.module').then( m => m.ComentariosPageModule)
   }
+
 
 ];
 

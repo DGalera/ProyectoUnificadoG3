@@ -31,6 +31,34 @@ export class AuthService {
     this.firestore.collection('Users').doc(record_id).valueChanges();
   }
 
+  //Comentarios
+
+  getAllComments(){
+    return this.firestore.collection('Comentarios').snapshotChanges();
+  }
+
+  createComment(record){
+    return this.firestore.collection('Comentarios').add(record);
+  }
+
+  deleteComment(record_id){
+    this.firestore.doc('Comentarios/'+record_id).delete();
+  }
+
+  // Respuestas
+
+  createResponse(record){
+    return this.firestore.collection('Responses').add(record);
+  }
+
+  getResponses(filter: string){
+    return this.firestore.collection('Responses', ref => ref.where('Comentario', '==', filter)).snapshotChanges();
+  }
+
+  deleteResponse(record_id){
+    this.firestore.doc('Responses/'+record_id).delete();
+  }
+
   // Registro de un nuevo usuario
   registerUser(email: string, pass: string){
     return new Promise( (resolve, reject) => {
@@ -52,6 +80,8 @@ export class AuthService {
   // Cierra sesión
   logoutUser(){
     this.afsAuth.signOut();
+    this.currentUserName = null;
+    this.isLogged = false;
   }
 
   // Comprueba si el usuario introducido está autentificado

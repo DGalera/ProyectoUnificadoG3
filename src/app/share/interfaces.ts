@@ -25,3 +25,9 @@ export interface ITeam{
     team: number;
     wus_cert: string;
 }
+
+export interface Comments{
+    id: string;
+    username: string;
+    comment: string;
+}

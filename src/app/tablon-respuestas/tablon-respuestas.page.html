@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Tablón de respuestas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label class="text-wrap">
+      Nuevo comentario
+    </ion-label>
+    <ion-input type="text" [(ngModel)]="comment"></ion-input>
+    <ion-button (click)="addComment()">Enviar</ion-button>
+  </ion-item>
+  <ion-list >
+    <div *ngFor="let c of comentarios" >
+      <app-comentarios [comment]="c"></app-comentarios>
+    </div>
+  </ion-list>
+</ion-content>
