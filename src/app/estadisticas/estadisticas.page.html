@@ -86,7 +86,7 @@
     <ion-card class="welcome-card">
       <ion-card-header>
         <ion-card-subtitle></ion-card-subtitle>
-        <ion-card-title>BÚSQUEDA DE USUARIO</ion-card-title>
+        <ion-card-title>BÚSQUEDA DE DONOR</ion-card-title>
       </ion-card-header>
       <ion-card-content>
         <ion-searchbar [(ngModel)]="miBuscador" [showCancelButton]="miStringDeCancell" (ionInput)="onInput($event)"
@@ -101,6 +101,17 @@
       </ion-card-header>
       <ion-card-content>
         <canvas #donorsBarChart></canvas>
+      </ion-card-content>
+    </ion-card>
+    <ion-card class="welcome-card">
+      <ion-card-header>
+        <ion-card-subtitle></ion-card-subtitle>
+        <ion-card-title>BÚSQUEDA DE TEAM</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-searchbar [(ngModel)]="miBuscador" [showCancelButton]="miStringDeCancell" (ionInput)="onInput($event)"
+          (ionCancel)="onCancel($event)">
+        </ion-searchbar>
       </ion-card-content>
     </ion-card>
     <ion-card class="welcome-card">

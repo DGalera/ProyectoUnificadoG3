@@ -45,9 +45,21 @@ export class ApiService {
       catchError(this.handleError)
     );
   }
+  get_Donor(name: string){
+    return this.http.get(this.proxyURL + this.apiURL + '/donor' + '/'+ name).pipe(
+      tap(data=> console.log(JSON.stringify(data))),
+      catchError(this.handleError)
+    );
+  }
 
   get_Teams(){
     return this.http.get(this.proxyURL + this.apiURL + '/teams').pipe(
+      tap(data=> console.log(JSON.stringify(data))),
+      catchError(this.handleError)
+    );
+  }
+  get_Team(team: number){
+    return this.http.get(this.proxyURL + this.apiURL + '/team' + '/'+team).pipe(
       tap(data=> console.log(JSON.stringify(data))),
       catchError(this.handleError)
     );
