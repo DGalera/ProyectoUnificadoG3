@@ -82,25 +82,36 @@
       </ion-col>
     </ion-row>
   </ion-grid>-->
-<div> 
-  <ion-card class="welcome-card">
-    <ion-card-header>
-      <ion-card-subtitle></ion-card-subtitle>
-      <ion-card-title>TOP DONATORS FOLDING AT HOME</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <canvas #donorsBarChart></canvas>
-    </ion-card-content>
-  </ion-card>
-  <ion-card class="welcome-card">
-    <ion-card-header>
-      <ion-card-subtitle></ion-card-subtitle>
-      <ion-card-title>TOP TEAMS FOLDING AT HOME</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <canvas #teamsBarChart></canvas>
-    </ion-card-content>
-  </ion-card>
-</div>
-  
+  <div>
+    <ion-card class="welcome-card">
+      <ion-card-header>
+        <ion-card-subtitle></ion-card-subtitle>
+        <ion-card-title>BÚSQUEDA DE USUARIO</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-searchbar [(ngModel)]="miBuscador" [showCancelButton]="miStringDeCancell" (ionInput)="onInput($event)"
+          (ionCancel)="onCancel($event)">
+        </ion-searchbar>
+      </ion-card-content>
+    </ion-card>
+    <ion-card class="welcome-card">
+      <ion-card-header>
+        <ion-card-subtitle></ion-card-subtitle>
+        <ion-card-title>TOP DONATORS FOLDING AT HOME</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <canvas #donorsBarChart></canvas>
+      </ion-card-content>
+    </ion-card>
+    <ion-card class="welcome-card">
+      <ion-card-header>
+        <ion-card-subtitle></ion-card-subtitle>
+        <ion-card-title>TOP TEAMS FOLDING AT HOME</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <canvas #teamsBarChart></canvas>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
 </ion-content>
