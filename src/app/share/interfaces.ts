@@ -13,6 +13,7 @@ export interface IDonor {
     rank: number;
     credit: number;
     team: number;
+    id: number;
 }
 
 export interface ITeam{

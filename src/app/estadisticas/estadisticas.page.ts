@@ -12,9 +12,11 @@ import { LoadingController, NavController } from '@ionic/angular';
   styleUrls: ['./estadisticas.page.scss'],
 })
 export class EstadisticasPage implements OnInit {
-  @ViewChild('barChart') barChart;
+  @ViewChild('donorsBarChart') donorsBarChart;
+  @ViewChild('teamsBarChart') teamsBarChart;
 
-  bars: any;
+  donorsBars: any;
+  teamsBars: any;
   colorArray: any;
 
   loading : any;
@@ -29,6 +31,11 @@ export class EstadisticasPage implements OnInit {
   private topDonors:  Array<IDonor> = [];
   private topDonorsName: string[] = [];
   private topDonorsCredit: number[] = [];
+
+  private topTeams:  Array<ITeam> = [];
+  private topTeamsName: string[] = [];
+  private topTeamsCredit: number[] = [];
+
   constructor(private apiService: ApiService, private route: Router, private nav: NavController, private loadingCtrl: LoadingController) { }
 
   ngOnInit() {
@@ -46,20 +53,36 @@ export class EstadisticasPage implements OnInit {
     // Show the loading page
     this.loading.present()
     // Get the Async information 
-    this.getAsyncData();
+    this.getAsyncDonors();
+    this.getAsyncTeams();
   }
 
-  private getAsyncData() {
+  private getAsyncDonors() {
 
     this.apiService.get_Donors().subscribe(
       (data: any) => {
         this.donors = data.results,         
-        this.createBarChart(),
+        this.createDonorsBarChart(),
         this.hideLoading();
       }
     );
 
     return this.donors;
+
+    
+  }
+
+  private getAsyncTeams() {
+
+    this.apiService.get_Teams().subscribe(
+      (data: any) => {
+        this.teams = data.results,         
+        this.createTeamsBarChart(),
+        this.hideLoading();
+      }
+    );
+
+    return this.teams;
 
     
   }
@@ -89,6 +112,24 @@ export class EstadisticasPage implements OnInit {
     console.log(this.topDonorsCredit);
   }
 
+  getTopTeamsName(){
+    this.topTeams = this.teams.slice(0,10);
+    for (let i = 0; i < this.topTeams.length; i++) {
+      this.topTeamsName.push(this.topTeams[i].name);
+      console.log(this.topTeams[i].name); 
+    }
+    console.log(this.topTeamsName);
+  }
+
+
+  getTopTeamsCredit(){
+    this.topTeams = this.teams.slice(0,10);
+    for (let i = 0; i < this.topTeams.length; i++) {
+      this.topTeamsCredit.push(this.topTeams[i].credit) 
+    }
+    console.log(this.topTeamsCredit);
+  }
+
 
   
   ionViewWillEnter(){
@@ -96,10 +137,10 @@ export class EstadisticasPage implements OnInit {
   }
 
   
-  createBarChart() {
+  createDonorsBarChart() {
     this.getTopDonorsName();
     this.getTopDonorsCredit();
-      this.bars = new Chart(this.barChart.nativeElement, {
+      this.donorsBars = new Chart(this.donorsBarChart.nativeElement, {
         type: 'bar',
         data: {
           labels: this.topDonorsName,
@@ -122,5 +163,31 @@ export class EstadisticasPage implements OnInit {
         }
       });
     }   
+    createTeamsBarChart() {
+      this.getTopTeamsName();
+      this.getTopTeamsCredit();
+        this.teamsBars = new Chart(this.teamsBarChart.nativeElement, {
+          type: 'bar',
+          data: {
+            labels: this.topTeamsName,
+            datasets: [{
+              label: 'Top Teams Credits',
+              data: this.topTeamsCredit,
+              backgroundColor: 'rgb(255,165,0)', // array should have same number of elements as number of dataset
+              borderColor: 'rgb(255,165,0)',// array should have same number of elements as number of dataset
+              borderWidth: 1
+            }]
+          },
+          options: {
+            scales: {
+              yAxes: [{
+                ticks: {
+                  beginAtZero: true
+                }
+              }]
+            }
+          }
+        });
+      } 
 
 }
