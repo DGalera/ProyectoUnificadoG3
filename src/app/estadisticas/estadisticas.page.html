@@ -89,7 +89,7 @@
         <ion-card-title>BÚSQUEDA DE DONANTE</ion-card-title>
       </ion-card-header>
       <ion-card-content>
-        <ion-searchbar #donor [showCancelButton]="true" (keyup.enter)="searchDonor(donor.value)">
+        <ion-searchbar  placeholder="Nombre de usuario" #donor [showCancelButton]="miStringDeCancell" (keyup.enter)="searchDonor(donor.value)">
         </ion-searchbar>
       </ion-card-content>
     </ion-card>
@@ -108,8 +108,7 @@
         <ion-card-title>BÚSQUEDA DE EQUIPO</ion-card-title>
       </ion-card-header>
       <ion-card-content>
-        <ion-searchbar [(ngModel)]="miBuscador" [showCancelButton]="miStringDeCancell" (ionInput)="onInput($event)"
-          (ionCancel)="onCancel($event)">
+        <ion-searchbar #team placeholder="Id de Equipo" [showCancelButton]="miStringDeCancell" (keyup.enter)="searchTeam(team.value)">
         </ion-searchbar>
       </ion-card-content>
     </ion-card>

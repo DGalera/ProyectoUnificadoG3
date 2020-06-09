@@ -38,7 +38,16 @@ const routes: Routes = [
   {
     path: 'donor/:name',
     loadChildren: './donor/donor.module#DonorPageModule'
+  },
+  {
+    path: 'team',
+    loadChildren: () => import('./team/team.module').then( m => m.TeamPageModule)
+  },
+  {
+    path: 'team/:id',
+    loadChildren: './team/team.module#TeamPageModule'
   }
+
 
 
 ];

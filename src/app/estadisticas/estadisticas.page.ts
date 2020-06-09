@@ -6,6 +6,7 @@ import { Chart } from 'chart.js';
 import { callbackify } from 'util';
 import { LoadingController, NavController } from '@ionic/angular';
 
+
 @Component({
   selector: 'app-estadisticas',
   templateUrl: './estadisticas.page.html',
@@ -14,6 +15,8 @@ import { LoadingController, NavController } from '@ionic/angular';
 export class EstadisticasPage implements OnInit {
   @ViewChild('donorsBarChart') donorsBarChart;
   @ViewChild('teamsBarChart') teamsBarChart;
+  @ViewChild('donor') donorSearchbar;
+  @ViewChild('team') teamSearchbar;
 
   donorsBars: any;
   teamsBars: any;
@@ -193,7 +196,13 @@ export class EstadisticasPage implements OnInit {
 
 
       searchDonor(name: string){
+        this.donorSearchbar.value="";
         this.route.navigate(['donor', name]);
+      }
+
+      searchTeam(id: number){
+        this.teamSearchbar.value="";
+        this.route.navigate(['team', id]);
       }
 
 }
