@@ -39,7 +39,7 @@ export class EstadisticasPage implements OnInit {
   constructor(private apiService: ApiService, private route: Router, private nav: NavController, private loadingCtrl: LoadingController) { }
 
   ngOnInit() {
-    
+
   }
 
   async showLoading() {
@@ -87,6 +87,7 @@ export class EstadisticasPage implements OnInit {
     
   }
 
+  
 
   private hideLoading(){
     // Hide the loading component
@@ -97,7 +98,7 @@ export class EstadisticasPage implements OnInit {
   getTopDonorsName(){
     this.topDonors = this.donors.slice(0,10);
     for (let i = 0; i < this.topDonors.length; i++) {
-      this.topDonorsName.push(this.topDonors[i].name);
+      this.topDonorsName[i]=this.topDonors[i].name;
       console.log(this.topDonors[i].name); 
     }
     console.log(this.topDonorsName);
@@ -107,7 +108,7 @@ export class EstadisticasPage implements OnInit {
   getTopDonorsCredit(){
   this.topDonors = this.donors.slice(0,10);
     for (let i = 0; i < this.topDonors.length; i++) {
-      this.topDonorsCredit.push(this.topDonors[i].credit) 
+      this.topDonorsCredit[i]=this.topDonors[i].credit;
     }
     console.log(this.topDonorsCredit);
   }
@@ -115,7 +116,7 @@ export class EstadisticasPage implements OnInit {
   getTopTeamsName(){
     this.topTeams = this.teams.slice(0,10);
     for (let i = 0; i < this.topTeams.length; i++) {
-      this.topTeamsName.push(this.topTeams[i].name);
+      this.topTeamsName[i] = this.topTeams[i].name;
       console.log(this.topTeams[i].name); 
     }
     console.log(this.topTeamsName);
@@ -125,7 +126,7 @@ export class EstadisticasPage implements OnInit {
   getTopTeamsCredit(){
     this.topTeams = this.teams.slice(0,10);
     for (let i = 0; i < this.topTeams.length; i++) {
-      this.topTeamsCredit.push(this.topTeams[i].credit) 
+      this.topTeamsCredit[i] = this.topTeams[i].credit;
     }
     console.log(this.topTeamsCredit);
   }
@@ -189,5 +190,10 @@ export class EstadisticasPage implements OnInit {
           }
         });
       } 
+
+
+      searchDonor(name: string){
+        this.route.navigate(['donor', name]);
+      }
 
 }

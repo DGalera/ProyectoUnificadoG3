@@ -1,0 +1,180 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title *ngIf="donorExists">Donante: {{donor.name}}</ion-title>
+    <ion-title *ngIf="error">Error</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="donorExists">
+  <ion-card >
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <div>
+              Fecha de la última Unidad de Trabajo (WU)
+            </div>
+          </ion-col>
+          <ion-col>
+            <div>
+              {{donor.last}}
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <div>
+              Puntuación Total
+            </div>
+          </ion-col>
+          <ion-col>
+            <div>
+              <a href="{{donor.credit_cert}}">
+                {{donor.credit}}
+              </a>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <div>
+              Total de Unidades de Trabajo (WUs)
+            </div>
+          </ion-col>
+          <ion-col>
+            <div>
+              <a href="{{donor.wus_cert}}">
+                {{donor.wus}}
+              </a>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <div>
+              Posición en el Ranking
+            </div>
+          </ion-col>
+          <ion-col>
+            <div>
+              {{donor.rank}}
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <div>
+              Clientes activos (Últimos 50 dias)
+            </div>
+          </ion-col>
+          <ion-col>
+            <div>
+              {{donor.active_50}}
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <div>
+              Clientes activos (Últimos 7 dias)
+            </div>
+          </ion-col>
+          <ion-col>
+            <div>
+              {{donor.active_7}}
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+  <ion-toolbar>
+    <ion-title>Contribuciones por equipo</ion-title>
+  </ion-toolbar>
+  <ion-card *ngFor="let team of donor.teams">
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <div>
+              Equipo
+            </div>
+          </ion-col>
+          <ion-col>
+            <div>
+              {{team.name}}
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <div>
+              Puntuación
+            </div>
+          </ion-col>
+          <ion-col>
+            <div>
+              {{team.credit}}
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <div>
+              Unidades de Trabajo (WUs)
+            </div>
+          </ion-col>
+          <ion-col>
+            <div>
+              {{team.wus}}
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <div>
+              Fecha de la última Unidad de Trabajo (WU)
+            </div>
+          </ion-col>
+          <ion-col>
+            <div>
+              {{team.last}}
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <div>
+              Clientes activos (Últimos 50 dias)
+            </div>
+          </ion-col>
+          <ion-col>
+            <div>
+              {{team.active_50}}
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <div>
+              Clientes activos (Últimos 7 dias)
+            </div>
+          </ion-col>
+          <ion-col>
+            <div>
+              {{team.active_7}}
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<ion-content *ngIf="error">
+  <ion-card >
+    <ion-card-header>
+      Lo siento, no existe el donante: {{name}}
+    </ion-card-header>
+  </ion-card>
+</ion-content>

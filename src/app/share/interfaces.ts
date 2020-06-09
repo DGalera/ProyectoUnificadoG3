@@ -18,6 +18,7 @@ export interface IDonor {
     team: number;
     id: number;
     active_50: number;
+    active_7: number;
     path: string;
     last: string;
     teams: Array<ITeam>;
@@ -34,6 +35,7 @@ export interface ITeam{
     donors: Array<IDonor>;
     total_teams: number;
     active_50: number;
+    active_7: number;
     logo: string;
     fast_team_url: string;
     last: string;
