@@ -5,12 +5,9 @@
 </ion-header>
 
 <ion-content>
-  <ion-item>
-    <ion-label class="text-wrap">
-      Nuevo comentario
-    </ion-label>
-    <ion-input type="text" [(ngModel)]="comment"></ion-input>
-    <ion-button (click)="addComment()">Enviar</ion-button>
+  <ion-item >
+    <ion-input  placeholder="Nuevo comentario..." type="text" [(ngModel)]="comment"></ion-input>
+    <ion-button (click)="addComment()" fill="clear"><ion-icon slot="start" name="send" style="padding-right: 5px;padding-left: 5px;"></ion-icon>Enviar</ion-button>
   </ion-item>
   <ion-list >
     <div *ngFor="let c of comentarios" >

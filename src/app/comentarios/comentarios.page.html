@@ -5,10 +5,10 @@
     </ion-avatar>
     <ion-label class="ion-text-wrap">
       <ion-text>
-        <h2 style="color: rgb(255, 255, 255);">{{comment.username}}</h2>
+        <h2 style="color: rgb(255, 255, 255);"><b>{{comment.username}}</b></h2>
       </ion-text>
       <ion-text>
-        <p style="color: rgb(231, 225, 225);">{{comment.comment}}</p>
+        <p style="color: #a9a9a9;">{{comment.comment}}</p>
       </ion-text>
 
     </ion-label>
@@ -16,9 +16,9 @@
 </div>
 <div style="margin-left: 5em;">
   <ion-item color="light">
-    <ion-label position="stacked" color="medium">Responder a este comentario...</ion-label>
+    <ion-label position="stacked">Responder a este comentario...</ion-label>
     <ion-input type="text" [(ngModel)]="response"></ion-input>
-    <ion-button fill="clear" size="small" color="dark" clear (click)="addResponse(comment.id)">
+    <ion-button class="btnResponder" fill="clear" size="small" color="dark" clear (click)="addResponse(comment.id)">
       <ion-icon slot="start" name="chatbubble-outline"></ion-icon>Responder
     </ion-button>
 
@@ -29,11 +29,11 @@
         <img src="assets/img/user.png" alt="">
       </ion-avatar>
       <ion-label class="ion-text-wrap">
-        <ion-text color="warning">
-          <h3 style="color: orange;">{{response.responseUser}}</h3>
+        <ion-text>
+          <h3 style="color: white;"><b>{{response.responseUser}}</b></h3>
         </ion-text>
-        <ion-text color="warning">
-          <p>{{response.response}}</p>
+        <ion-text>
+          <p style="color: #a9a9a9;">{{response.response}}</p>
         </ion-text>
         <ion-button *ngIf="response.responseUser == this.authService.currentUserName"
           (click)="deleteResponse(response.id)" fill="clear" color="danger" size="small">
@@ -42,8 +42,8 @@
       </ion-label>
     </ion-item>
   </div>
-  <ion-button *ngIf="!showed" fill="clear" color="success" (click)="showResponses(comment.id)">
-    <ion-icon slot="start" name="chatbubbles-outline"></ion-icon>Ver respuestas
+  <ion-button class="btnVerRespuestas" *ngIf="!showed" fill="clear"  (click)="showResponses(comment.id)">
+    <ion-icon  slot="start" name="chatbubbles-outline"></ion-icon>Ver respuestas
   </ion-button>
 
   <div *ngIf="comment.username == this.authService.currentUserName">

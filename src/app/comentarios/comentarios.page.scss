@@ -1,0 +1,25 @@
+ion-button{
+    --color: orange;
+    }
+
+    .btnResponder:hover{
+        background-color: rgba(255,255,255, 0.1);
+    }
+
+    .btnVerRespuestas:hover{
+        background-color: rgba(255, 165, 0, 0.1);
+    }
+
+
+    ion-item{
+        --highlight-background: rgba(255,255,255, 0.2);
+        --highlight-color-focused:#92949c;
+    }
+
+    ion-label{
+        --color:orange;
+        --highlight-color:orange;
+        --highlight-color-focused:orange;
+    }
+
+  
