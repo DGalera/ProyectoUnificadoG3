@@ -28,7 +28,6 @@ import { HTTP } from '@ionic-native/http/ngx';
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    HomePageModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireDatabaseModule,
