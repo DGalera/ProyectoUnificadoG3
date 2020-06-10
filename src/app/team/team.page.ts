@@ -3,6 +3,7 @@ import { ITeam, IDonor } from '../share/interfaces';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from '../api/api.service';
 import { ToastController } from '@ionic/angular';
+import { LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-team',
@@ -10,30 +11,60 @@ import { ToastController } from '@ionic/angular';
   styleUrls: ['./team.page.scss'],
 })
 export class TeamPage implements OnInit {
-
   public id: number;
   public team: ITeam;
+  public donors: IDonor[];
+
   teamExists = false;
   error = false;
-  public donors: IDonor[];
-  numTimesLeft;
+  
+  rest=0;
+  numTimesLeft=0;
+
   firstTime: boolean;
+  smallerThanSix: boolean;
+  lastRound = false;
+
   rangeInitial = 0;
   rangeFinal = 6;
-  rest;
-  lastRound = false;
-  smallerThanSix: boolean;
 
-
+  loading : any;
+  comments: string = '';
+  
   constructor(
     private activatedrouter: ActivatedRoute,
     private router: Router,
     private apiService: ApiService,
-    public toastController: ToastController
+    public toastController: ToastController,
+    private loadingCtrl: LoadingController
+
   ) { this.donors = [], this.firstTime = true, this.smallerThanSix = false }
 
 
   ngOnInit() {
+    
+  }
+
+  async showLoading() {
+    this.loading= await this.loadingCtrl.create({
+      spinner: "crescent",
+      message: "Cargando...",
+      cssClass: "loader-class"
+
+      
+    });
+    // Show the loading page
+    this.loading.present()
+    // Get the Async information 
+    this.getTeam();
+
+  }
+
+  ionViewWillEnter(){
+    this.showLoading()
+  }
+
+  getTeam(){
     this.id = this.activatedrouter.snapshot.params.id;
     this.apiService.get_Team(this.id).subscribe(
       (data: any) => {
@@ -41,13 +72,22 @@ export class TeamPage implements OnInit {
         this.teamExists = true
         this.error = false
         this.addMoreDonors()
+        this.hideLoading()
       },
       (err) => {
         console.log("Error: Team not found")
         this.teamExists = false
-        this.error = true;
+        this.error = true
+        this.hideLoading();
       }
     )
+
+    return this.team
+  }
+
+  private hideLoading(){
+    // Hide the loading component
+    this.loading.dismiss();
   }
 
   doInfinite(infiniteScroll) {

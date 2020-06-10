@@ -1,8 +1,12 @@
 
 ion-card { background: #343434; }
 
-ion-card:nth-child(even) { background: #1e1e1e; }
+ion-card:nth-child(odd) { background: #222222; }
 
 a{
     color: orange;
+}
+
+#teamCard{
+    background: #343434;
 }

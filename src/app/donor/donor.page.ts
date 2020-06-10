@@ -3,6 +3,7 @@ import { IDonor, ITeam } from '../share/interfaces';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from '../api/api.service';
 import { ToastController } from '@ionic/angular';
+import { LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-donor',
@@ -12,30 +13,59 @@ import { ToastController } from '@ionic/angular';
 export class DonorPage implements OnInit {
   public name: string;
   public donor: IDonor;
+  public teams: ITeam[];
+
   donorExists = false;
   error = false;
-  public teams: ITeam[];
+ 
+  rest = 0;
   numTimesLeft = 0;
+
   firstTime: boolean;
+  smallerThanSix: boolean;
+  lastRound = false;
+
   rangeInitial = 0;
   rangeFinal = 6;
-  rest = 0;
-  lastRound = false;
-  smallerThanSix: boolean;
-
-
+ 
+  loading : any;
+  comments: string = '';
 
   constructor(
     private activatedrouter: ActivatedRoute,
     private router: Router,
     private apiService: ApiService,
-    public toastController: ToastController
+    public toastController: ToastController,
+    private loadingCtrl: LoadingController
 
   ) { this.teams = [], this.firstTime = true, this.smallerThanSix = false }
 
+  ngOnInit(){
+
+  }
+
+  async showLoading() {
+    this.loading= await this.loadingCtrl.create({
+      spinner: "crescent",
+      message: "Cargando...",
+      cssClass: "loader-class"
+
+      
+    });
+    // Show the loading page
+    this.loading.present()
+    // Get the Async information 
+    this.getDonor();
+
+  }
 
 
-  ngOnInit() {
+
+  ionViewWillEnter(){
+    this.showLoading()
+  }
+
+  getDonor(){
     this.name = this.activatedrouter.snapshot.params.name;
 
     this.apiService.get_Donor(this.name).subscribe(
@@ -44,14 +74,22 @@ export class DonorPage implements OnInit {
         this.donorExists = true
         this.error = false
         this.addMoreTeams()
+        this.hideLoading()
       },
       (err) => {
         console.log("Error: Donor not found")
         this.donorExists = false
-        this.error = true;
+        this.error = true
+        this.hideLoading();
       }
     )
 
+    return this.donor
+  }
+
+  private hideLoading(){
+    // Hide the loading component
+    this.loading.dismiss();
   }
 
   doInfinite(infiniteScroll) {

@@ -6,7 +6,7 @@
 </ion-header>
 
 <ion-content *ngIf="teamExists">
-  <ion-card>
+  <ion-card id="teamCard">
     <ion-card-content>
       <ion-grid>
         <ion-row>
@@ -151,7 +151,7 @@
 <ion-content *ngIf="error">
   <ion-card>
     <ion-card-header>
-      Lo siento, no existe el equipo con id: {{id}}
+      El equipo con id "{{id}}" no existe 
     </ion-card-header>
   </ion-card>
 </ion-content>

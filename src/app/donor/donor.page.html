@@ -6,7 +6,7 @@
 </ion-header>
 
 <ion-content *ngIf="donorExists">
-  <ion-card >
+  <ion-card id="donorCard">
     <ion-card-content>
       <ion-grid>
         <ion-row>
@@ -180,7 +180,7 @@
 <ion-content *ngIf="error">
   <ion-card >
     <ion-card-header>
-      Lo siento, no existe el donante: {{name}}
+      El donante "{{name}}" no existe 
     </ion-card-header>
   </ion-card>
 </ion-content>

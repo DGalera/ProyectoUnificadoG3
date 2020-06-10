@@ -92,8 +92,7 @@
         <ion-searchbar  placeholder="Nombre de usuario" #donor [showCancelButton]="miStringDeCancell" (keyup.enter)="searchDonor(donor.value)">
         </ion-searchbar>
       </ion-card-content>
-    </ion-card>
-    <ion-card class="welcome-card">
+
       <ion-card-header>
         <ion-card-subtitle></ion-card-subtitle>
         <ion-card-title>TOP DONANTES FOLDING AT HOME</ion-card-title>
@@ -102,6 +101,8 @@
         <canvas #donorsBarChart></canvas>
       </ion-card-content>
     </ion-card>
+
+
     <ion-card class="welcome-card">
       <ion-card-header>
         <ion-card-subtitle></ion-card-subtitle>
@@ -111,8 +112,6 @@
         <ion-searchbar #team placeholder="Id de Equipo" [showCancelButton]="miStringDeCancell" (keyup.enter)="searchTeam(team.value)">
         </ion-searchbar>
       </ion-card-content>
-    </ion-card>
-    <ion-card class="welcome-card">
       <ion-card-header>
         <ion-card-subtitle></ion-card-subtitle>
         <ion-card-title>TOP EQUIPOS FOLDING AT HOME</ion-card-title>
@@ -122,8 +121,6 @@
       </ion-card-content>
     </ion-card>
   </div>
-
-  <br>
   <app-footer></app-footer>
 
 </ion-content>
