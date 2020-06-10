@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../core/AuthService';
 import { ToastController } from '@ionic/angular';
+import { LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tablon-respuestas',
@@ -13,21 +14,49 @@ export class TablonRespuestasPage implements OnInit {
   public respuestas: any;
   comment: string = '';
   response: string = '';
+  loading : any;
+
   constructor(public authService: AuthService,
-    public toastController: ToastController) { }
+    public toastController: ToastController, private loadingCtrl: LoadingController) { }
 
   ngOnInit() {
+    
+  }
+
+  async showLoading() {
+    this.loading= await this.loadingCtrl.create({
+      spinner: "crescent",
+      message: "Cargando...",
+      cssClass: "loader-class"
+
+      
+    });
+    // Show the loading page
+    this.loading.present()
+    // Get the Async information 
+    this.getComments();
+  }
+
+  getComments(){
     // Recoge todos los comentarios
     this.authService.getAllComments().subscribe(data => {
-      this.comentarios = data.map(e => {
+      this.comentarios = data.map
+      (e => {
         return {
           id: e.payload.doc.id,
           username: e.payload.doc.data()['UserName'],
           comment: e.payload.doc.data()['Comment'],
-          likes: e.payload.doc.data()['Likes']
+          likes: e.payload.doc.data()['Likes'],
+          
         };
       })
+      this.hideLoading()
     });
+  }
+
+  private hideLoading(){
+    // Hide the loading component
+    this.loading.dismiss();
   }
 
   // Añadir un nuevo comentario
@@ -46,6 +75,10 @@ export class TablonRespuestasPage implements OnInit {
       console.log("No hay usuario identificado");
       this.presentToast();
     }
+  }
+
+  ionViewWillEnter(){
+    this.showLoading()
   }
 
 

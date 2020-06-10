@@ -32,7 +32,6 @@ import { HTTP } from '@ionic-native/http/ngx';
     AngularFirestoreModule,
     AngularFireDatabaseModule,
     FormsModule,
-    HomePageModule,
     HttpClientModule,
   ],
   providers: [AngularFireAuth,
