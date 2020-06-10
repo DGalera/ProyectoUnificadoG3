@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { EstadisticasPageRoutingModule } from './estadisticas-routing.module';
 
 import { EstadisticasPage } from './estadisticas.page';
+import { FooterPage } from '../footer/footer.page';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { EstadisticasPage } from './estadisticas.page';
     IonicModule,
     EstadisticasPageRoutingModule
   ],
-  declarations: [EstadisticasPage]
+  declarations: [EstadisticasPage, FooterPage]
 })
 export class EstadisticasPageModule {}

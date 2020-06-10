@@ -46,7 +46,11 @@ const routes: Routes = [
   {
     path: 'team/:id',
     loadChildren: './team/team.module#TeamPageModule'
+  },  {
+    path: 'footer',
+    loadChildren: () => import('./footer/footer.module').then( m => m.FooterPageModule)
   }
+
 
 
 

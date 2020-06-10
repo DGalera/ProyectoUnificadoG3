@@ -4,18 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ManualPageRoutingModule } from './manual-routing.module';
+import { FooterPageRoutingModule } from './footer-routing.module';
 
-import { ManualPage } from './manual.page';
-import { FooterPage } from '../footer/footer.page';
+import { FooterPage } from './footer.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ManualPageRoutingModule
+    FooterPageRoutingModule
   ],
-  declarations: [ManualPage, FooterPage]
+  declarations: [FooterPage]
 })
-export class ManualPageModule {}
+export class FooterPageModule {}

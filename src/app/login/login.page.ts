@@ -65,7 +65,6 @@ export class LoginPage implements OnInit {
 
   // Guarda en el servicio el usuario que ha iniciado sesión
   getCurrentUser() {
-    console.log("==========OnLogin - GetCurrentUser=============");
     this.showLoading();
     this.authService.isAuth().subscribe(user => {
       if (user) {
@@ -74,7 +73,6 @@ export class LoginPage implements OnInit {
         this.users.subscribe(data => {
           this.ActualUser = data;
           this.authService.setCurrentUser(this.ActualUser[0].Name);
-          console.log(this.ActualUser[0].Name);
           this.dismissModal();
         });
       }
@@ -117,7 +115,6 @@ export class LoginPage implements OnInit {
           this.userName = "";
           this.userEmail = "";
           this.userPass = "";
-          console.log(resp);
         })
           .catch(error => {
             console.log(error);

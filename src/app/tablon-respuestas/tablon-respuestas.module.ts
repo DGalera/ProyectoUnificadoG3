@@ -8,6 +8,7 @@ import { TablonRespuestasPageRoutingModule } from './tablon-respuestas-routing.m
 
 import { TablonRespuestasPage } from './tablon-respuestas.page';
 import { ComentariosPage } from '../comentarios/comentarios.page';
+import { FooterPage } from '../footer/footer.page';
 
 @NgModule({
   imports: [
@@ -16,6 +17,6 @@ import { ComentariosPage } from '../comentarios/comentarios.page';
     IonicModule,
     TablonRespuestasPageRoutingModule
   ],
-  declarations: [TablonRespuestasPage, ComentariosPage]
+  declarations: [TablonRespuestasPage, ComentariosPage, FooterPage]
 })
 export class TablonRespuestasPageModule {}
