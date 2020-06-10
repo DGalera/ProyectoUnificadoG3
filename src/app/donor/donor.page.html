@@ -1,8 +1,5 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/estadisticas"></ion-back-button>
-    </ion-buttons>
     <ion-title *ngIf="donorExists">Donante: {{donor.name}}</ion-title>
     <ion-title *ngIf="error">Error</ion-title>
   </ion-toolbar>
@@ -15,7 +12,7 @@
         <ion-row>
           <ion-col>
             <div>
-              Fecha de la última Unidad de Trabajo (WU)
+              <b>Fecha de la última Unidad de Trabajo (WU)</b>
             </div>
           </ion-col>
           <ion-col>
@@ -27,7 +24,7 @@
         <ion-row>
           <ion-col>
             <div>
-              Puntuación Total
+              <b>Puntuación Total</b>
             </div>
           </ion-col>
           <ion-col>
@@ -41,7 +38,7 @@
         <ion-row>
           <ion-col>
             <div>
-              Total de Unidades de Trabajo (WUs)
+              <b>Total de Unidades de Trabajo (WUs)</b>
             </div>
           </ion-col>
           <ion-col>
@@ -55,7 +52,7 @@
         <ion-row>
           <ion-col>
             <div>
-              Posición en el Ranking
+              <b>Posición en el Ranking</b>
             </div>
           </ion-col>
           <ion-col>
@@ -67,7 +64,7 @@
         <ion-row>
           <ion-col>
             <div>
-              Clientes activos (Últimos 50 dias)
+              <b>Clientes activos (Últimos 50 dias)</b>
             </div>
           </ion-col>
           <ion-col>
@@ -79,7 +76,7 @@
         <ion-row>
           <ion-col>
             <div>
-              Clientes activos (Últimos 7 dias)
+              <b>Clientes activos (Últimos 7 dias)</b>
             </div>
           </ion-col>
           <ion-col>
@@ -94,25 +91,27 @@
   <ion-toolbar>
     <ion-title>Contribuciones por equipo</ion-title>
   </ion-toolbar>
-  <ion-card *ngFor="let team of donor.teams">
+
+
+  <ion-card *ngFor="let team of teams">
     <ion-card-content>
       <ion-grid>
         <ion-row>
           <ion-col>
             <div>
-              Equipo
+              <b>Equipo</b>
             </div>
           </ion-col>
           <ion-col>
             <div>
-              {{team.name}}
+              <a href="/team/{{team.team}}">{{team.name}}</a>
             </div>
           </ion-col>
         </ion-row>
         <ion-row>
           <ion-col>
             <div>
-              Puntuación
+              <b>Puntuación</b>
             </div>
           </ion-col>
           <ion-col>
@@ -124,7 +123,7 @@
         <ion-row>
           <ion-col>
             <div>
-              Unidades de Trabajo (WUs)
+              <b>Unidades de Trabajo (WUs)</b>
             </div>
           </ion-col>
           <ion-col>
@@ -136,7 +135,7 @@
         <ion-row>
           <ion-col>
             <div>
-              Fecha de la última Unidad de Trabajo (WU)
+              <b>Fecha de la última Unidad de Trabajo (WU)</b>
             </div>
           </ion-col>
           <ion-col>
@@ -148,7 +147,7 @@
         <ion-row>
           <ion-col>
             <div>
-              Clientes activos (Últimos 50 dias)
+              <b>Clientes activos (Últimos 50 dias)</b>
             </div>
           </ion-col>
           <ion-col>
@@ -160,7 +159,7 @@
         <ion-row>
           <ion-col>
             <div>
-              Clientes activos (Últimos 7 dias)
+              <b>Clientes activos (Últimos 7 dias)</b>
             </div>
           </ion-col>
           <ion-col>
@@ -172,6 +171,10 @@
       </ion-grid>
     </ion-card-content>
   </ion-card>
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="doInfinite($event)" [disabled]="numTimesLeft<=0 && rest<=0">
+    <ion-infinite-scroll-content loadingSpinner="crescent" loadingText="Cargando...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 </ion-content>
 
 <ion-content *ngIf="error">

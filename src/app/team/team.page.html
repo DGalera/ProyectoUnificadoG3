@@ -1,15 +1,12 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/estadisticas"></ion-back-button>
-    </ion-buttons>
     <ion-title *ngIf="teamExists">Equipo: {{team.name}}</ion-title>
     <ion-title *ngIf="error">Error</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content *ngIf="teamExists">
-  <ion-card >
+  <ion-card>
     <ion-card-content>
       <ion-grid>
         <ion-row>
@@ -32,7 +29,7 @@
           </ion-col>
           <ion-col>
             <div>
-              <a >
+              <a>
                 {{team.credit}}
               </a>
             </div>
@@ -46,7 +43,7 @@
           </ion-col>
           <ion-col>
             <div>
-              <a >
+              <a>
                 {{team.wus}}
               </a>
             </div>
@@ -75,20 +72,33 @@
               {{team.active_50}}
             </div>
           </ion-col>
-        </ion-row>       
+        </ion-row>
       </ion-grid>
     </ion-card-content>
   </ion-card>
   <ion-toolbar>
     <ion-title> Miembros del equipo</ion-title>
   </ion-toolbar>
-  <ion-card *ngFor="let donor of team.donors">
+  <ion-card *ngFor="let donor of donors">
     <ion-card-content>
       <ion-grid>
+
         <ion-row>
           <ion-col>
             <div>
-              Rank
+              <b>Nombre</b>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div>
+              <a href="/donor/{{donor.name}}">{{donor.name}}</a>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <div>
+              <b>Posición en el Ranking</b>
             </div>
           </ion-col>
           <ion-col>
@@ -100,19 +110,7 @@
         <ion-row>
           <ion-col>
             <div>
-              Nombre
-            </div>
-          </ion-col>
-          <ion-col>
-            <div>
-              {{donor.name}}
-            </div>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col>
-            <div>
-              Créditos
+              <b>Créditos</b>
             </div>
           </ion-col>
           <ion-col>
@@ -124,7 +122,7 @@
         <ion-row>
           <ion-col>
             <div>
-              Unidades de Trabajo (WUs)
+              <b>Unidades de Trabajo (WUs)</b>
             </div>
           </ion-col>
           <ion-col>
@@ -133,14 +131,20 @@
             </div>
           </ion-col>
         </ion-row>
-        
+
       </ion-grid>
     </ion-card-content>
   </ion-card>
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="doInfinite($event)" [disabled]="numTimesLeft<=0 && rest<=0">
+    <ion-infinite-scroll-content loadingSpinner="crescent" loadingText="Cargando...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 </ion-content>
 
+
+
 <ion-content *ngIf="error">
-  <ion-card >
+  <ion-card>
     <ion-card-header>
       Lo siento, no existe el equipo con id: {{id}}
     </ion-card-header>

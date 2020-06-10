@@ -1,14 +1,4 @@
-.col {
-    border: solid 1px grey;
-    border-bottom-style: none;
-    border-right-style: none;
-    text-overflow:ellipsis;
-}
 
-.col:last-child {
-    border-right: solid 1px grey;
-}
+ion-card { background: #343434; }
 
-.row:last-child .col {
-    border-bottom: solid 1px grey;
-}
+ion-card:nth-child(odd) { background: #1e1e1e; }
