@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { ColaborarPageRoutingModule } from './colaborar-routing.module';
 
 import { ColaborarPage } from './colaborar.page';
+import { FooterPage } from '../footer/footer.page';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { ColaborarPage } from './colaborar.page';
     IonicModule,
     ColaborarPageRoutingModule
   ],
-  declarations: [ColaborarPage]
+  declarations: [ColaborarPage, FooterPage]
 })
 export class ColaborarPageModule {}

@@ -27,7 +27,6 @@ export class TablonRespuestasPage implements OnInit {
           likes: e.payload.doc.data()['Likes']
         };
       })
-      console.log(this.comentarios);
     });
   }
 
@@ -40,7 +39,6 @@ export class TablonRespuestasPage implements OnInit {
       record['Comment'] = this.comment;
       this.authService.createComment(record).then(response => {
         this.comment = '';
-        console.log(response);
       }).catch(error => {
         console.log(error.message);
       });

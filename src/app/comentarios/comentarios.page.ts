@@ -31,7 +31,6 @@ export class ComentariosPage implements OnInit {
       record['Comment'] = this.comment;
       this.authService.createComment(record).then(response => {
         this.comment = '';
-        console.log(response);
       }).catch(error => {
         console.log(error.message);
       });
@@ -62,7 +61,6 @@ export class ComentariosPage implements OnInit {
           responseUser: e.payload.doc.data()['ResponseUser'],
         };
       });
-      console.log(this.respuestas);
       this.showed = true;
     });
   }
@@ -79,7 +77,6 @@ export class ComentariosPage implements OnInit {
 
         this.authService.createResponse(record).then(resp => {
           this.response = '';
-          console.log(resp);
         }).catch(error => console.log(error.message));
       }
 
