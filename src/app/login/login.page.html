@@ -61,7 +61,7 @@
             </div>
 
             <ion-item *ngIf="registerIsTapped==false">
-              <ion-label class="ion-text-center">¿Eres nuevo? <span color="primary" class="registerPointer" (click)="signUp()">Regístrate</span></ion-label>
+              <ion-label class="ion-text-center">¿Eres nuevo? <span color="primary" class="registerPointer" (click)="signUp()"> <u>Regístrate</u></span></ion-label>
             </ion-item>
     
             <div class="padding" *ngIf="registerIsTapped==true">
@@ -69,7 +69,7 @@
             </div>
 
             <ion-item *ngIf="registerIsTapped==true">
-              <ion-label class="ion-text-center">Ya tienes una cuenta? <br> <span color="primary" class="registerPointer" (click)="changeForm()">Ingresa con tus datos</span></ion-label>
+              <ion-label class="ion-text-center">¿Ya tienes una cuenta? <br> <span color="primary" class="registerPointer" (click)="changeForm()"><u>Ingresa con tus datos</u></span></ion-label>
             </ion-item>
           </ion-col>
         </ion-row>
