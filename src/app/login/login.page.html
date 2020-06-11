@@ -36,6 +36,9 @@
                 <ion-input type="password" placeholder="Contraseña" [(ngModel)]="userPass"></ion-input>
               </ion-item>
             </div>
+            <div class="alert alert-danger" role="alert" *ngIf="registerSuccess==false" >
+              {{registerError}}
+            </div>
 
             <div *ngIf="loginIsTapped==true">
               <ion-item class="inputBox input-margin">

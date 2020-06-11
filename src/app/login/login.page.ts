@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController, LoadingController } from '@ionic/angular';
+import { ModalController, LoadingController, ToastController } from '@ionic/angular';
 import { AuthService } from '../core/AuthService';
 import { Observable } from 'rxjs';
 import { UserInterface } from 'src/app/share/interfaces';
@@ -21,6 +21,8 @@ export class LoginPage implements OnInit {
   userName: string = '';
   userEmail: string = '';
   userPass: string = '';
+  registerSuccess: boolean;
+  registerError: string = '';
 
   users: Observable<UserInterface[]>;
   ActualUser: any[];
@@ -38,7 +40,8 @@ export class LoginPage implements OnInit {
   loginIsTapped: boolean;
 
   constructor(public modal: ModalController, private authService: AuthService,
-    public loadingCtrl: LoadingController
+    public loadingCtrl: LoadingController,
+    public toastController: ToastController
   ) { }
 
   ngOnInit() {
@@ -94,11 +97,20 @@ export class LoginPage implements OnInit {
         this.authService.isLogged = true;
         this.getCurrentUser();
       }).catch(error => {
-      this.loginError = error.message, console.log("Error: ", error); if (this.loginError == '') {
-        this.success = true;  
-      } else {
-        this.success = false;
-      }
+        if (error.message.indexOf("email") !== -1) {
+          this.loginError = "Introduce un email válido";
+        } else if (error.message.indexOf("password") !== -1) {
+          this.loginError = "Contraseña incorrecta";
+        } else if (error.message.indexOf("record") !== -1) {
+          this.loginError = "No hay ningún usuario registrado con ese correo";
+        } else {
+          this.loginError = "";
+        }
+        console.log("Error: ", error); if (this.loginError == '') {
+          this.success = true;
+        } else {
+          this.success = false;
+        }
       });
   }
 
@@ -119,8 +131,32 @@ export class LoginPage implements OnInit {
           .catch(error => {
             console.log(error);
           });
-      }).catch(error => console.log(error.message));
-      this.authService.isLogged = true;
-    this.getCurrentUser();
+            this.authService.isLogged = true;
+            this.getCurrentUser();
+            this.registerToast();
+      }).catch(error => {
+        console.log(error.message);
+        if (error.message.indexOf("email") !== -1) {
+          this.registerError = "Debes introducir un email válido";
+        } else if (error.message.indexOf("Password") !== -1 || (error.message.indexOf("password") !== -1)) {
+          this.registerError = "La contraseña debe tener mínimo 6 caracteres";
+        } else {
+          this.registerError = '';
+        }   
+        if (this.registerError == '') {
+          this.registerSuccess = true;
+        } else {
+          this.registerSuccess = false;
+        }
+      });
+  }
+
+  async registerToast() {
+    const toast = await this.toastController.create({
+      message: 'Te has registrado correctamente',
+      duration: 2000,
+      position: "top"
+    });
+    toast.present();
   }
 }
