@@ -7,7 +7,7 @@
 
 <ion-content>
 
-<!-- HEADER -->
+  <!-- HEADER -->
 
   <ion-slides pager="true" [options]="slideOptionsOne">
     <ion-slide *ngFor="let slide of slides">
@@ -34,22 +34,22 @@
   <!-- FIN HEADER-->
 
 
-  <!-- PÁGINA DE INICIO -->
+ 
 
-      <ion-card>
-        <ion-card-content>
-          <br>
-          <ion-item>
-          <ion-row>
-            <ion-col size-lg="7" size-xs="9">
-              
-              <ion-text>
-                <h1 class="title">Combate enfermedades junto a nosotros</h1>
-              </ion-text>
-          
+  <ion-card>
+    <ion-card-content>
+      <br>
+      <ion-item>
+        <ion-row>
+          <ion-col size-lg="7" size-xs="9">
 
-            
-          
+            <ion-text>
+              <h1 class="title">Combate enfermedades junto a nosotros</h1>
+            </ion-text>
+
+
+
+
             <ion-text>
               Folding at home es un proyecto que busca la manera de investigar el Covid-19 haciendo uso de los equipos
               informáticos que decidan apoyar el proyecto.
@@ -57,38 +57,52 @@
               ejecutan en sus equipos informáticos un “software” de computación distribuida que utiliza los
               recursos de sus procesadores para investigar diferentes enfermedades y hallar un tratamiento.
             </ion-text>
-          
-          
-            </ion-col>
+
+
+          </ion-col>
           <ion-col size-lg="5" size-xs="12">
-          <ion-img src="assets/img/logo.png" alt=""></ion-img>
-        </ion-col>
-      </ion-row>
-    </ion-item>
+            <ion-img src="assets/img/logo.png" alt=""></ion-img>
+          </ion-col>
+        </ion-row>
+      </ion-item>
       <br>
       <ion-item>
-      <ion-row>
-        
-      <ion-col size-lg="7" size-xs="9">
-        <h1 class="title">Una gran comunidad de investigadores</h1>
-          <ion-text>
+        <ion-row>
+
+          <ion-col size-lg="7" size-xs="9">
+            <h1 class="title">Una gran comunidad de investigadores</h1>
+            <ion-text>
               Folding at home te permite sumarte a la comunidad de investigadores que trabajan para
               desetrañar los secretos del coronavirus.
               Aún tus conocimientos científicos sean nulos, puedes contribuir en esta importante
               investigación.
               Ahora, frente al Covid-19, se pueden hacer simulaciones de los movimientos de las proteínas,
               para hacer avanzar la investigación básica y los esfuerzos de desarrollo de fármacos.
-          </ion-text>
-        </ion-col>
-        <ion-col size-lg="5" size-xs="12">
-        <ion-img src="assets/img/initImage.jpg" alt=""></ion-img>
-      </ion-col>
-      
+            </ion-text>
+          </ion-col>
+          <ion-col size-lg="5" size-xs="12">
+            <ion-img src="assets/img/initImage.jpg" alt=""></ion-img>
+          </ion-col>
+
         </ion-row>
       </ion-item>
-        </ion-card-content>
-      </ion-card>
+    </ion-card-content>
+  </ion-card>
+ <!-- PÁGINA DE INICIO -->
+ <!-- <ion-card>
+  <ion-card-header>
 
+    <ion-card-title>¿CÓMO SURGIÓ LA IDEA DE ESTE PROYECTO?</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
+      <!-- <iframe class="embed-responsive-item" src="../../assets/videomaialen.mp4" allowfullscreen></iframe>-->
+      <video controls="true" class="embed-responsive-item">
+        <source src="../../assets/videomaialen.mp4" type="video/mp4" />
+      </video>
+    </div>
+  </ion-card-content>
+</ion-card>-->
 
   <!-- FIN PÁGINA DE INICIO -->
 
