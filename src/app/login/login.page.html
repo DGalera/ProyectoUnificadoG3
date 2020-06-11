@@ -69,7 +69,7 @@
             </div>
 
             <ion-item *ngIf="registerIsTapped==true">
-              <ion-label class="ion-text-center">Ya tienes una cuenta? <br> <span color="primary" class="registerPointer">Ingresa con tus datos</span></ion-label>
+              <ion-label class="ion-text-center">Ya tienes una cuenta? <br> <span color="primary" class="registerPointer" (click)="changeForm()">Ingresa con tus datos</span></ion-label>
             </ion-item>
           </ion-col>
         </ion-row>

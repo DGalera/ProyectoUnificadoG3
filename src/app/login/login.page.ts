@@ -159,4 +159,9 @@ export class LoginPage implements OnInit {
     });
     toast.present();
   }
+
+  changeForm(){
+    this.loginIsTapped = true;
+    this.registerIsTapped = false;
+  }
 }
