@@ -75,7 +75,6 @@ export class AppComponent implements OnInit {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
-      this.checkTheme();
     });
 
     this.platform.resume.subscribe(() => {
@@ -92,19 +91,6 @@ export class AppComponent implements OnInit {
     this.logOut();
   }
 
-  // Comprueba si el tema está en modo oscuro
-  checkTheme(){
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
-    console.log(prefersDark);
-    if (prefersDark.matches){   
-      this.darkMode = true;
-      this.darkModeOption = false;
-      document.body.classList.toggle('dark');
-    } else {
-      this.darkMode = false;
-      this.darkModeOption = true;
-    }
-  }
 
   ngOnInit() {
     const path = window.location.pathname.split('folder/')[1];
@@ -127,15 +113,6 @@ export class AppComponent implements OnInit {
     });
     
     return await modal.present();
-  }
-
-
-  // Cambia de modo oscuro a normal
-  changeTheme(){
-    this.darkMode = !this.darkMode;
-    console.log(this.darkMode);
-    document.body.classList.toggle('dark');
-    console.log(this.darkMode);
   }
 
   // Guarda en el registro el usuario que ha iniciado sesión
