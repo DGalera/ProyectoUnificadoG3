@@ -102,8 +102,8 @@ export class ComentariosPage implements OnInit {
   async deleteCommentAlert(id) {
     const alert = await this.alertController.create({
       cssClass: 'my-custom-class',
-      header: 'Atención!',
-      message: ' <strong>Estás seguro de que quieres eliminar el comentario?</strong>!!!',
+      header: '¡Atención!',
+      message: ' <strong>¿Estás seguro de que quieres eliminar el comentario?</strong>',
       buttons: [
         {
           text: 'Cancelar',
