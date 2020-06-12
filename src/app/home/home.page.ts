@@ -24,7 +24,7 @@ export class HomePage implements OnInit {
       foto: './../../assets/img/fotofolding.jpg'
     },
     {
-      titulo: 'Consulta las estadísticas <br> de la aplicación',
+      titulo: 'Consulta las estadísticas <br> del proyecto',
       desc: 'Información sobre las contribuciones en <br> Folding at Home',
       boton: 'Estadísticas',
       navigate: '/estadisticas',
