@@ -18,19 +18,19 @@ export class HomePage implements OnInit {
   slides = [
     {
       titulo: 'Folding at home <br> Un proyecto de todos',
-      desc: 'Resumen sobre lo que es el proyecto y lo que pretende <br> llegar a conseguir',
+      desc: 'Información sobre las contribuciones en <br> Folding at Home',
       boton: 'Estadísticas',
       navigate: '/estadisticas'
     },
     {
       titulo: 'Comienza a <br> colaborar',
-      desc: 'Información relevante que incite a los lectores a <br> participar en el proyecto',
+      desc: 'Descubre como participar en el proyecto',
       boton: 'Colabora',
       navigate: '/colaborar'
     },
     {
-      titulo: 'COVID-19',
-      desc: 'Información resumida sobre el covid-19 para aquellos <br> que estén interesados en saber más acerca de ello',
+      titulo: 'Pregunta algo',
+      desc: 'Visita nuestro tablón de respuestas y <br> háznos una pregunta',
       boton: 'Respuestas',
       navigate: '/tablon-respuestas'
     }
