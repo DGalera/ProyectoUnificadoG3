@@ -34,24 +34,31 @@
     <ion-card class="welcome-card">
       <ion-card-header>
         <ion-card-subtitle></ion-card-subtitle>
-        <ion-card-title class="title">TOP DONANTES FOLDING AT HOME</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <canvas #donorsBarChart></canvas>
-      </ion-card-content>
-      <ion-card-header>
-        <ion-card-subtitle></ion-card-subtitle>
-        <ion-card-title>BÚSQUEDA DE DONANTE</ion-card-title>
+        <ion-card-title class="title">BÚSQUEDA DE DONANTE</ion-card-title>
       </ion-card-header>
       <ion-card-content>
         <ion-searchbar placeholder="Nombre de usuario" #donor [showCancelButton]="miStringDeCancell"
           (keyup.enter)="searchDonor(donor.value)">
         </ion-searchbar>
       </ion-card-content>
+      <ion-card-header>
+        <ion-card-subtitle></ion-card-subtitle>
+        <ion-card-title class="title">TOP DONANTES FOLDING AT HOME</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <canvas #donorsBarChart></canvas>
+      </ion-card-content>
     </ion-card>
-
-
     <ion-card class="welcome-card">
+      <ion-card-header>
+        <ion-card-subtitle></ion-card-subtitle>
+        <ion-card-title class="title">BÚSQUEDA DE EQUIPO</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-searchbar #team placeholder="Id de Equipo" [showCancelButton]="miStringDeCancell"
+          (keyup.enter)="searchTeam(team.value)">
+        </ion-searchbar>
+      </ion-card-content>
       <ion-card-header>
         <ion-card-subtitle></ion-card-subtitle>
         <ion-card-title class="title">TOP EQUIPOS FOLDING AT HOME</ion-card-title>
@@ -59,29 +66,19 @@
       <ion-card-content>
         <canvas #teamsBarChart></canvas>
       </ion-card-content>
-      <ion-card-header>
-        <ion-card-subtitle></ion-card-subtitle>
-        <ion-card-title>BÚSQUEDA DE EQUIPO</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <ion-searchbar #team placeholder="Id de Equipo" [showCancelButton]="miStringDeCancell"
-          (keyup.enter)="searchTeam(team.value)">
-        </ion-searchbar>
-      </ion-card-content>
-    </ion-card>
-
-    <ion-card class="welcome-card">
+      <br>
       <ion-card-header>
         <ion-card-title class="title">MAXIMIZA TU ESFUERZO</ion-card-title>
         <ion-card-subtitle>CONFIGURA TU EQUIPO</ion-card-subtitle>
       </ion-card-header>
       <ion-card-content>
         <ion-text>
-          Si está interesado en crear un equipo propio, puede comenzar aquí.
+          Si estás interesado en crear un equipo propio, puedes hacerlo <a href="https://apps.foldingathome.org/team">aquí</a>.
+          
         </ion-text>
-            <ion-button color="warning" href="https://apps.foldingathome.org/team/create">COMIENZA UN EQUIPO</ion-button>
-            <ion-button color="warning" href="https://apps.foldingathome.org/team/update">CAMBIA LA INFORMACIÓN DE TU EQUIPO</ion-button>
+        
       </ion-card-content>
+      <br>
     </ion-card>
   </div>
   <app-footer></app-footer>
