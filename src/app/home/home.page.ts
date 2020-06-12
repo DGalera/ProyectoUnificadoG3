@@ -20,20 +20,22 @@ export class HomePage implements OnInit {
       titulo: 'Folding at home, <br> un proyecto de todos',
       desc: 'Descubre cómo participar en el proyecto',
       boton: 'Colaborar',
-      navigate: '/colaborar'
+      navigate: '/colaborar',
+      foto: './../../assets/img/fotofolding.jpg'
     },
     {
       titulo: 'Consulta las estadísticas <br> de la aplicación',
       desc: 'Información sobre las contribuciones en <br> Folding at Home',
       boton: 'Estadísticas',
-      navigate: '/estadisticas'
-      
+      navigate: '/estadisticas',
+      foto: './../../assets/img/folding-at-home.jpg'
     },
     {
       titulo: 'Participa en <br> nuestro foro',
       desc: 'Comparte tus impresiones sobre <br> Folding at Home con los demás',
       boton: 'Foro',
-      navigate: '/tablon-respuestas'
+      navigate: '/tablon-respuestas',
+      foto: './../../assets/img/slide.jpg'
     }
   ];
 
