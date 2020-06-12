@@ -29,8 +29,8 @@ export class HomePage implements OnInit {
       navigate: '/colaborar'
     },
     {
-      titulo: 'Pregunta algo',
-      desc: 'Visita nuestro tablón de respuestas y <br> háznos una pregunta',
+      titulo: 'Visita nuestro FORO',
+      desc: 'Y háznos una pregunta',
       boton: 'Respuestas',
       navigate: '/tablon-respuestas'
     }
