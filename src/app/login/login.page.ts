@@ -53,6 +53,8 @@ export class LoginPage implements OnInit {
   showLoading() {
     this.loadingCtrl.create({
       message: 'Cargando...',
+      cssClass: "loader-class",
+      spinner:"crescent",
       duration: 1000
     }).then((res) => {
       res.present();
