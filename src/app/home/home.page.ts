@@ -18,7 +18,7 @@ export class HomePage implements OnInit {
   slides = [
     {
       titulo: 'Folding at home, <br> un proyecto de todos',
-      desc: 'Descubre cómo participar en el proyecto',
+      desc: 'Descubre cómo participar',
       boton: 'Colaborar',
       navigate: '/colaborar',
       foto: './../../assets/img/fotofolding.jpg'
