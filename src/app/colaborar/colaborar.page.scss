@@ -20,3 +20,13 @@ ion-text{
     font-weight: bold;
     font-size: 2em;
   }
+
+  ion-button{
+    --background:rgba(255,165,0, 0.8);
+    width: 320px;
+    padding-right: 20px;
+  }
+
+  ion-button:hover{
+    transform: scale(1.03) perspective(1px)
+  }

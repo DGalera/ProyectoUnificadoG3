@@ -5,51 +5,53 @@
 </ion-header>
 
 <ion-content>
-
-  <br>
-  <h1 style="margin-left: 20px;" class="title">Descargando el programa</h1>
-  <ion-list>
-    <ion-item>
+  <ion-card class="welcome-card">
+    <ion-card-header>
+      <ion-card-subtitle></ion-card-subtitle>
+      <ion-card-title class="title">DESCARGANDO EL PROGRAMA</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
       <ion-text>
-        Mientras continúa con sus actividades cotidianas, su ordenador trabajará para ayudar a encontrar curas para
-        enfermedades como el cáncer, ELA, Parkinson, Huntington, Influenza y muchas otras.
+        Mientras continúas con tus actividades cotidianas, tu ordenador trabajará para ayudar a encontrar curas para
+        enfermedades como el COVID-19, cáncer, ELA, Parkinson, Huntington y muchas otras. <br><br> Echa un vistazo a nuestro <a [routerLink]="['/manual']"> manual de instalación </a>  para empezar.
       </ion-text>
-    </ion-item>
-    <ion-item>
-      <ion-thumbnail slot="start">
-        <img src="../../assets/img/download.png">
-      </ion-thumbnail>
-      <ion-label>
-        Descarga
-        <p size-xs="12">Desde la página oficial de<a href="https://foldingathome.org"> folding at home</a></p>
-      </ion-label>
-    </ion-item>
-
-    
-
-  </ion-list>
-  <h1 style=" margin-left: 20px;" class="title">Haciendo una donación</h1>
-  <ion-list>
-      <ion-item>
-        <ion-text>
-          Hay más de un método para contribuir a la investigación de Folding @ home, además de descargar y ejecutar nuestro software. Además, también puede donar fondos que nos permitirán continuar nuestro trabajo en los campos del plegamiento de proteínas, el diseño computacional de medicamentos y varias otras formas de dinámica molecular.
-        </ion-text>
-      </ion-item>
-      <ion-item>
-        <ion-thumbnail slot="start">
-        <img src="../../assets/img/donate.png">
-      </ion-thumbnail>
-      <ion-label>
-        Realiza una donación
-        <p size-xs="12">Desde la página oficial de<a href="https://foldingathome.org/about/donate/"> folding at home</a></p>
-      </ion-label>
-      </ion-item>
+      <br>
+      <br>
+      <br>
+      <ion-button [routerLink]="['/manual']">
+        <ion-icon  slot="start" name="book"></ion-icon>Manual de instalación
+      </ion-button>
       
+    </ion-card-content>
+    <br>
+  </ion-card>
+
+  <ion-card class="welcome-card">
+    <ion-card-header>
+      <ion-card-subtitle></ion-card-subtitle>
+      <ion-card-title class="title">HACIENDO UNA DONACIÓN</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-text>
+        Hay más de un método para contribuir en la investigación de Folding at home además de descargar y ejecutar nuestro software. También puedes donar fondos que permitirán al equipo a continuar con el trabajo en los campos del plegamiento de proteínas, el diseño computacional de medicamentos y varias otras formas de dinámica molecular.
+        <br><br>
+        Puedes contribuir con una donación a nombre de tu <a href="https://alumni.wustl.edu/give/annualfund/Pages/Corporate-Matching.aspx" target="_blank">empresa</a> o de forma <a href="https://gifts.wustl.edu/med/index.html?other_designation_description=Folding@Home%20(Dr%20Greg%20Bowman,%20Dept%20of%20Biochemistry)&0_d_tr1=71&sc=NG" target="_blank">particular</a>.
+      </ion-text>
+      <br>
+      <br>
+      <br>
+      <ion-button href="https://alumni.wustl.edu/give/annualfund/Pages/Corporate-Matching.aspx" target="_blank">
+        <ion-icon  slot="start" name="logo-usd"></ion-icon>Donación para empresas
+      </ion-button>
+      <ion-button href="https://gifts.wustl.edu/med/index.html?other_designation_description=Folding@Home%20(Dr%20Greg%20Bowman,%20Dept%20of%20Biochemistry)&0_d_tr1=71&sc=NG" target="_blank">
+        <ion-icon  slot="start" name="logo-usd"></ion-icon>Donación para particulares
+      </ion-button>
+      
+    </ion-card-content>
+    <br>
+  </ion-card>
 
 
-
-
-  </ion-list>
   <!-- <ion-card>
     <ion-card-header>
       <img style="width: 50%; height: 50%; float:left; margin-right: 30px; border-radius: 50%;"
@@ -62,7 +64,6 @@
       </ion-button>
     </ion-card-content>
   </ion-card>-->
-
 
 
   <app-footer></app-footer>
