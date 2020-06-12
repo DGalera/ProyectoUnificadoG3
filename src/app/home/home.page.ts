@@ -19,17 +19,20 @@ export class HomePage implements OnInit {
     {
       titulo: 'Folding at home <br> Un proyecto de todos',
       desc: 'Resumen sobre lo que es el proyecto y lo que pretende <br> llegar a conseguir',
-      boton: 'Saber más'
+      boton: 'Estadísticas',
+      navigate: '/estadisticas'
     },
     {
       titulo: 'Comienza a <br> colaborar',
       desc: 'Información relevante que incite a los lectores a <br> participar en el proyecto',
-      boton: 'Colabora'
+      boton: 'Colabora',
+      navigate: '/colaborar'
     },
     {
       titulo: 'COVID-19',
       desc: 'Información resumida sobre el covid-19 para aquellos <br> que estén interesados en saber más acerca de ello',
-      boton: 'Saber más'
+      boton: 'Respuestas',
+      navigate: '/tablon-respuestas'
     }
   ];
 
