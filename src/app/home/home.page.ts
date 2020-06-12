@@ -17,21 +17,22 @@ export class HomePage implements OnInit {
   // Array de objetos del slider del inicio
   slides = [
     {
-      titulo: 'Folding at home <br> Un proyecto de todos',
-      desc: 'Información sobre las contribuciones en <br> Folding at Home',
-      boton: 'Estadísticas',
-      navigate: '/estadisticas'
-    },
-    {
-      titulo: 'Comienza a <br> colaborar',
-      desc: 'Descubre como participar en el proyecto',
-      boton: 'Colabora',
+      titulo: 'Folding at home, <br> un proyecto de todos',
+      desc: 'Descubre cómo participar en el proyecto',
+      boton: 'Colaborar',
       navigate: '/colaborar'
     },
     {
-      titulo: 'Visita nuestro FORO',
-      desc: 'Y háznos una pregunta',
-      boton: 'Respuestas',
+      titulo: 'Consulta las estadísticas <br> de la aplicación',
+      desc: 'Información sobre las contribuciones en <br> Folding at Home',
+      boton: 'Estadísticas',
+      navigate: '/estadisticas'
+      
+    },
+    {
+      titulo: 'Participa en <br> nuestro foro',
+      desc: 'Comparte tus impresiones sobre <br> Folding at Home con los demás',
+      boton: 'Foro',
       navigate: '/tablon-respuestas'
     }
   ];
