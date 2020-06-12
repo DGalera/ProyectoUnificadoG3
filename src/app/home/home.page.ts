@@ -28,7 +28,7 @@ export class HomePage implements OnInit {
       desc: 'Información sobre las contribuciones en <br> Folding at Home',
       boton: 'Estadísticas',
       navigate: '/estadisticas',
-      foto: './../../assets/img/folding-at-home.jpg'
+      foto: './../../assets/img/slide2.jpg'
     },
     {
       titulo: 'Participa en <br> nuestro foro',
