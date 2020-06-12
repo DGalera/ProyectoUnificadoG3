@@ -17,7 +17,7 @@ export class HomePage implements OnInit {
   // Array de objetos del slider del inicio
   slides = [
     {
-      titulo: 'Folding at home, <br> un proyecto de todos',
+      titulo: 'Folding at home, <br> un proyecto por y para todos',
       desc: 'Descubre cómo participar',
       boton: 'Colaborar',
       navigate: '/colaborar',
