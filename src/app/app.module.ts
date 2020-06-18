@@ -21,6 +21,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { HTTP } from '@ionic-native/http/ngx';
 
 
+
+
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -28,12 +31,11 @@ import { HTTP } from '@ionic-native/http/ngx';
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    HomePageModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireDatabaseModule,
     FormsModule,
-    HttpClientModule,
+    HttpClientModule
   ],
   providers: [AngularFireAuth,
     StatusBar,
