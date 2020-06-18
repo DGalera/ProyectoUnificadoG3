@@ -3,6 +3,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
 
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   {
     path: 'home',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
@@ -46,7 +47,8 @@ const routes: Routes = [
   {
     path: 'team/:id',
     loadChildren: './team/team.module#TeamPageModule'
-  },  {
+  },
+  {
     path: 'footer',
     loadChildren: () => import('./footer/footer.module').then( m => m.FooterPageModule)
   }

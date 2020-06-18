@@ -75,7 +75,6 @@ export class AppComponent implements OnInit {
 
   initializeApp() {
     this.platform.ready().then(() => {
-      this.router.navigateByUrl('home');
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
