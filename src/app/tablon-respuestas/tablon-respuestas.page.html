@@ -5,15 +5,19 @@
 </ion-header>
 
 <ion-content>
-  <ion-item >
-    <ion-input  placeholder="Nuevo comentario..." type="text" [(ngModel)]="comment"></ion-input>
-    <ion-button (click)="addComment()" fill="clear"><ion-icon slot="start" name="send" style="padding-right: 5px;padding-left: 5px;"></ion-icon>Enviar</ion-button>
-  </ion-item>
-  <ion-list >
-    <div *ngFor="let c of comentarios" >
-      <app-comentarios [comment]="c"></app-comentarios>
-    </div>
-  </ion-list>
+    <ion-item >
+      <ion-input  placeholder="Nuevo comentario..." type="text" [(ngModel)]="comment"></ion-input>
+      <ion-button (click)="addComment()" fill="clear"><ion-icon slot="start" name="send" style="padding-right: 5px;padding-left: 5px;"></ion-icon>Enviar</ion-button>
+    </ion-item>
+    <ion-card>
+      <ion-list >
+        <div *ngFor="let c of comentarios" >
+          <app-comentarios [comment]="c"></app-comentarios>
+        </div>
+      </ion-list>
+    </ion-card>
+    
+  
 
   <app-footer></app-footer>
 </ion-content>
