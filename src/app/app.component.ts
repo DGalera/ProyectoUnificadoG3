@@ -7,6 +7,7 @@ import { LoginPage } from './login/login.page';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AuthService } from './core/AuthService';
 import { UserInterface } from './share/interfaces';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -65,6 +66,7 @@ export class AppComponent implements OnInit {
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
+    private router : Router,
     private modalController: ModalController,
     private authService: AuthService
   ) {
@@ -73,6 +75,7 @@ export class AppComponent implements OnInit {
 
   initializeApp() {
     this.platform.ready().then(() => {
+      this.router.navigateByUrl('home');
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
