@@ -104,7 +104,7 @@
           </ion-col>
           <ion-col>
             <div>
-              <a href="/team/{{team.team}}">{{team.name}}</a>
+              <a [routerLink]="['/team',team.team]">{{team.name}}</a>
             </div>
           </ion-col>
         </ion-row>

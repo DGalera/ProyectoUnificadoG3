@@ -93,7 +93,7 @@
           </ion-col>
           <ion-col>
             <div>
-              <a href="/donor/{{donor.name}}">{{donor.name}}</a>
+              <a [routerLink]="['/donor',donor.name]">{{donor.name}}</a>
             </div>
           </ion-col>
         </ion-row>
